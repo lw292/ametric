@@ -32,3 +32,12 @@ Make sure that your ".bib" files are located in the "data/" subdirectory, and th
   ruby ap.rb
 ```
 That should output a ".csv" file in the "results/" subdirectory.
+
+## Cleaning the Data
+
+Use JabRef to:
+* Autogenerate keys.
+* Escape "#" in notes field.
+* Change database property "Encoding" to ASCII
+* Use a text editor to replace "?" with a random letter.
+* Use a bibtex text reader to remove any parts that looked weird.
