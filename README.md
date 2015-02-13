@@ -38,6 +38,8 @@ That should output a ".csv" file in the "results/" subdirectory.
 Use JabRef to:
 * Autogenerate keys.
 * Escape "#" in notes field.
-* Change database property "Encoding" to ASCII
-* Use a text editor to replace "?" with a random letter.
-* Use a bibtex text reader to remove any parts that looked weird.
+* Change database property "Encoding" to ASCII.
+
+Use a text editor that can can highlight bibtex syntax to:
+* Remove "?".
+* Remove any parts that is not properly escaped.
