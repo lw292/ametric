@@ -40,6 +40,6 @@ Use JabRef to:
 * Escape "#" in notes field.
 * Change database property "Encoding" to ASCII.
 
-Use a text editor that can can highlight bibtex syntax to:
+Use a text editor that highlights bibtex syntax to:
 * Remove "?".
 * Remove any parts that is not properly escaped.
