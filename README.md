@@ -35,10 +35,13 @@ That should output a ".csv" file in the "results/" subdirectory.
 
 ## Cleaning the Data
 
+Use a text editor that highlights bibtex syntax to:
+* Search and replace "#" with "\#"
+
 Use JabRef to:
 * Autogenerate keys.
-* Escape "#" in notes field.
 * Change database property "Encoding" to ASCII.
+* Save and save anyway.
 
 Use a text editor that highlights bibtex syntax to:
 * Remove "?".
