@@ -35,14 +35,6 @@ That should output a ".csv" file in the "results/" subdirectory.
 
 ## Cleaning the Data
 
-Use a text editor that highlights bibtex syntax to:
-* Search and replace "#" with "\#"
+Add the "BibTeX_Export_Impact" style to your EndNote library, and export the EndNote library using this style.
 
-Use JabRef to:
-* Autogenerate keys.
-* Change database property "Encoding" to ASCII.
-* Save and save anyway.
-
-Use a text editor that highlights bibtex syntax to:
-* Remove "?".
-* Remove any parts that is not properly escaped.
+More coming soon ...

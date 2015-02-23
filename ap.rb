@@ -44,8 +44,9 @@ CSV.open("results/results-"+Time.now.strftime("%Y-%m-%d-%H-%M-%S")+".csv", 'w') 
     "date of second publication"]
 
   Dir.glob(dir+"/*.bib").each do |file|
-  
-    references = BibTeX.open(file, :strip => true)
+    
+    contents = File.open(file, "r:UTF-8").read
+    references = BibTeX.parse(contents.gsub!(/(\P{ASCII}|#)/, ''))
     references_by_times_cited = references.sort_by { |reference| reference.times_cited }.reverse!
     references_by_year = references.sort_by { |reference| reference.year }
 
