@@ -38,6 +38,8 @@ That should output a ".csv" file in the "results" subdirectory.
 
 ## Cleaning the Data
 
-Add the "BibTeX_Export_Impact" style to EndNote, and export the EndNote library using this style.
+This script has been tested to work with reference data from the Web of Science and Scopus. If you have data from both of these resources, you will need to remove possible duplicates in your data. We recommend using EndNote to deduplicate your reference data.
+
+To re-export deduplicated data from EndNote, please use the included "BibTeX_Export_Impact" style.
 
 More coming soon ...
