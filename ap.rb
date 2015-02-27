@@ -41,9 +41,11 @@ CSV.open("results/results-"+Time.now.strftime("%Y-%m-%d-%H-%M-%S")+".csv", 'w') 
     "normalized m-index", 
     "average citation count", 
     "normalized average citation count", 
-    "date of second publication"]
+    "date of second publication",
+    "average number of publications per year"
+  ]
 
-  Dir.glob(dir+"/*.bib").each do |file|
+  Dir.glob(dir+"/*.{bib,txt}").each do |file|
     
     contents = File.open(file, "r:UTF-8").read
     references = BibTeX.parse(contents.gsub!(/(\P{ASCII}|#)/, ''))
@@ -98,7 +100,10 @@ CSV.open("results/results-"+Time.now.strftime("%Y-%m-%d-%H-%M-%S")+".csv", 'w') 
     normalized_hindex, 
     (hindex/(years.last.to_f-years.first.to_f)).round(2), 
     (normalized_hindex/(years_without_first.last.to_f-years_without_first.first.to_f)).round(2), 
-    (total_citations.to_f/references.count).round(2), (total_citations_without_first.to_f/references_without_first.count).round(2), 
-    references_by_year[1].year]
+    (total_citations.to_f/references.count).round(2),
+    (total_citations_without_first.to_f/references_without_first.count).round(2), 
+    references_by_year[1].year,
+    (references.count/years.count).round(2)
+  ]
   end
 end

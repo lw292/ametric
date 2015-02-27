@@ -8,6 +8,7 @@ This script generates the following author-level metrics from reference data fil
 * **Average Citation Count**: The average number of times a scholar's papers have been cited.
 * **Normalized Average Citation Count**: The average number of times a scholar's papers, excluding the first paper, have been cited.
 * **Date of Second Publication**: The year in which a scholar's second paper was published.
+* **Average Number of Publications Per Year**: The average number of papers published per year.
 
 ## Installation
 
