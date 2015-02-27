@@ -43,4 +43,6 @@ This script has been tested to work with reference data from the Web of Science 
 
 To re-export deduplicated data from EndNote, please use the included "BibTeX_Export_Impact" style.
 
-More coming soon ...
+## Known Limitations
+
+When calculating the "Normalized" set of metric scores, the script removes the first publication of the author in question. Because the publication date information in the reference data imported from most databases only include the year, in the case when the author published more than one papers in the first year, it is not possible for the script to know which one to exclude. The script will simply remove the first reference when the references are sorted by year. This is not ideal. If this is a concern, you should manually remove the first publication, and then calculate the "Normalized" set of metric scores manually.
