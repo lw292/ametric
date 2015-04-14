@@ -37,8 +37,10 @@ CSV.open("results/results-"+Time.now.strftime("%Y-%m-%d-%H-%M-%S")+".csv", 'w') 
     "name",
     "h-index", 
     "normalized h-index", 
+    "individual normalized h-index",
     "m-index", 
     "normalized m-index", 
+    "individual normalized m-index",
     "average citation count", 
     "normalized average citation count", 
     "date of second publication",
@@ -94,12 +96,22 @@ CSV.open("results/results-"+Time.now.strftime("%Y-%m-%d-%H-%M-%S")+".csv", 'w') 
       end
     end
 
+    individual_normalized_hindex = 0
+    references_without_first_by_times_cited.each_with_index do |reference,index|
+      if index+1 >= (reference.times_cited/reference.authors.length).round(2)
+        individual_normalized_hindex = index
+        break
+      end
+    end
+    
   csv << [
     File.basename(file, File.extname(file)),
     hindex, 
     normalized_hindex, 
+    individual_normalized_hindex, 
     (hindex/(years.last.to_f-years.first.to_f)).round(2), 
     (normalized_hindex/(years_without_first.last.to_f-years_without_first.first.to_f)).round(2), 
+    (individual_normalized_hindex/(years_without_first.last.to_f-years_without_first.first.to_f)).round(2), 
     (total_citations.to_f/references.count).round(2),
     (total_citations_without_first.to_f/references_without_first.count).round(2), 
     references_by_year[1].year,
