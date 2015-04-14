@@ -37,13 +37,13 @@ CSV.open("results/results-"+Time.now.strftime("%Y-%m-%d-%H-%M-%S")+".csv", 'w') 
     "name",
     "h-index", 
     "normalized h-index", 
-    "individual normalized h-index",
+    "per-coauthor normalized h-index",
     "m-index", 
     "normalized m-index", 
-    "individual normalized m-index",
+    "per-coauthor normalized m-index",
     "average citation count", 
     "normalized average citation count", 
-    "individual normalized average citation count", 
+    "per-coauthor normalized average citation count", 
     "date of second publication",
     "average number of publications per year"
   ]
@@ -71,13 +71,13 @@ CSV.open("results/results-"+Time.now.strftime("%Y-%m-%d-%H-%M-%S")+".csv", 'w') 
 
     years_without_first = []
     total_citations_without_first = 0
-    total_c_citations_without_first = 0
+    total_pc_citations_without_first = 0
     references_without_first.each do |reference|
       if !reference.year.nil? && !reference.year.empty? && !years_without_first.include?(reference.year)
         years_without_first << reference.year
       end
       total_citations_without_first += reference.times_cited
-      total_c_citations_without_first += (reference.times_cited/reference.authors.length).round(2)
+      total_pc_citations_without_first += (reference.times_cited/reference.authors.length).round(2)
     end
 
     years.sort!
@@ -99,10 +99,10 @@ CSV.open("results/results-"+Time.now.strftime("%Y-%m-%d-%H-%M-%S")+".csv", 'w') 
       end
     end
 
-    individual_normalized_hindex = 0
+    pc_normalized_hindex = 0
     references_without_first_by_times_cited.each_with_index do |reference,index|
       if index+1 >= (reference.times_cited/reference.authors.length).round(2)
-        individual_normalized_hindex = index
+        pc_normalized_hindex = index
         break
       end
     end
@@ -111,13 +111,13 @@ CSV.open("results/results-"+Time.now.strftime("%Y-%m-%d-%H-%M-%S")+".csv", 'w') 
     File.basename(file, File.extname(file)),
     hindex, 
     normalized_hindex, 
-    individual_normalized_hindex, 
+    pc_normalized_hindex, 
     (hindex/(years.last.to_f-years.first.to_f)).round(2), 
     (normalized_hindex/(years_without_first.last.to_f-years_without_first.first.to_f)).round(2), 
-    (individual_normalized_hindex/(years_without_first.last.to_f-years_without_first.first.to_f)).round(2), 
+    (pc_normalized_hindex/(years_without_first.last.to_f-years_without_first.first.to_f)).round(2), 
     (total_citations.to_f/references.count).round(2),
     (total_citations_without_first.to_f/references_without_first.count).round(2), 
-    (total_c_citations_without_first.to_f/references_without_first.count).round(2),
+    (total_pc_citations_without_first.to_f/references_without_first.count).round(2),
     references_by_year[1].year,
     (references.count/years.count).round(2)
   ]

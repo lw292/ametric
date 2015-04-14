@@ -3,13 +3,13 @@
 This script generates the following author-level metrics from reference data files in the BibTeX format:
 * **_h_-Index**: A scholar with an *h*-Index of *h* has published at least *h* papers, each of which has been cited at least *h* times.
 * **Normalized _h_-Index**: A scholar with a Normalized *h*-Index of *nh* has published at least *nh* papers since the first paper, each of which has been cited at least *nh* times.
-* **Individual Normalized _h_-Index**: A scholar with an Individual Normalized *h*-Index of *inh* has published at least *inh* papers since the first paper, each of which has been cited at least *inh* times per co-author.
+* **Per-Coauthor Normalized _h_-Index**: A scholar with a Per-Coauthor Normalized *h*-Index of *inh* has published at least *inh* papers since the first paper, each of which has been cited at least *inh* times per co-author.
 * **_m_-Index**: A scholar's *m*-Index is calculated as the *h*-Index divided by the number of years since the first paper.
 * **Normalized _m_-Index**: A scholar's Normalized *m*-Index is calculated as the Normalized *h*-Index divided by the number of years since the second paper.
-* **Individual Normalized _m_-Index**: A scholar's Individual Normalized *m*-Index is calculated as the Individual Normalized *h*-Index divided by the number of years since the second paper.
+* **Per-Coauthor Normalized _m_-Index**: A scholar's Per-Coauthor Normalized *m*-Index is calculated as the Per-coauthor Normalized *h*-Index divided by the number of years since the second paper.
 * **Average Citation Count**: The average number of times a scholar's papers have been cited.
 * **Normalized Average Citation Count**: The average number of times a scholar's papers, excluding the first paper, have been cited.
-* **Individual Normalized Average Citation Count**: The average number of times a scholar's papers, excluding the first paper, have been cited, as divided by the number of co-authors.
+* **Per-coauthor Normalized Average Citation Count**: The average number of times a scholar's papers, excluding the first paper, have been cited per co-author.
 * **Date of Second Publication**: The year in which a scholar's second paper was published.
 * **Average Number of Publications Per Year**: The average number of papers published per year.
 
