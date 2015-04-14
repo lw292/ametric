@@ -3,7 +3,7 @@
 This script generates the following author-level metrics from reference data files in the BibTeX format:
 * **_h_-Index**: A scholar with an *h*-Index of *h* has published at least *h* papers, each of which has been cited at least *h* times.
 * **Normalized _h_-Index**: A scholar with a Normalized *h*-Index of *nh* has published at least *nh* papers since the first paper, each of which has been cited at least *nh* times.
-* **Per-Coauthor Normalized _h_-Index**: A scholar with a Per-Coauthor Normalized *h*-Index of *ch* has published at least *pnh* papers since the first paper, each of which has been cited at least *pnh* times per co-author.
+* **Per-Coauthor Normalized _h_-Index**: A scholar with a Per-Coauthor Normalized *h*-Index of *pnh* has published at least *pnh* papers since the first paper, each of which has been cited at least *pnh* times per co-author.
 * **_m_-Index**: A scholar's *m*-Index is calculated as the *h*-Index divided by the number of years since the first paper.
 * **Normalized _m_-Index**: A scholar's Normalized *m*-Index is calculated as the Normalized *h*-Index divided by the number of years since the second paper.
 * **Per-Coauthor Normalized _m_-Index**: A scholar's Per-Coauthor Normalized *m*-Index is calculated as the Per-coauthor Normalized *h*-Index divided by the number of years since the second paper.
