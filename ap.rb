@@ -43,6 +43,7 @@ CSV.open("results/results-"+Time.now.strftime("%Y-%m-%d-%H-%M-%S")+".csv", 'w') 
     "individual normalized m-index",
     "average citation count", 
     "normalized average citation count", 
+    "individual normalized average citation count", 
     "date of second publication",
     "average number of publications per year"
   ]
@@ -70,11 +71,13 @@ CSV.open("results/results-"+Time.now.strftime("%Y-%m-%d-%H-%M-%S")+".csv", 'w') 
 
     years_without_first = []
     total_citations_without_first = 0
+    total_c_citations_without_first = 0
     references_without_first.each do |reference|
       if !reference.year.nil? && !reference.year.empty? && !years_without_first.include?(reference.year)
         years_without_first << reference.year
       end
       total_citations_without_first += reference.times_cited
+      total_c_citations_without_first += (reference.times_cited/reference.authors.length).round(2)
     end
 
     years.sort!
@@ -114,6 +117,7 @@ CSV.open("results/results-"+Time.now.strftime("%Y-%m-%d-%H-%M-%S")+".csv", 'w') 
     (individual_normalized_hindex/(years_without_first.last.to_f-years_without_first.first.to_f)).round(2), 
     (total_citations.to_f/references.count).round(2),
     (total_citations_without_first.to_f/references_without_first.count).round(2), 
+    (total_c_citations_without_first.to_f/references_without_first.count).round(2),
     references_by_year[1].year,
     (references.count/years.count).round(2)
   ]

@@ -9,6 +9,7 @@ This script generates the following author-level metrics from reference data fil
 * **Individual Normalized _m_-Index**: A scholar's Individual Normalized *m*-Index is calculated as the Individual Normalized *h*-Index divided by the number of years since the second paper.
 * **Average Citation Count**: The average number of times a scholar's papers have been cited.
 * **Normalized Average Citation Count**: The average number of times a scholar's papers, excluding the first paper, have been cited.
+* **Individual Normalized Average Citation Count**: The average number of times a scholar's papers, excluding the first paper, have been cited, as divided by the number of co-authors.
 * **Date of Second Publication**: The year in which a scholar's second paper was published.
 * **Average Number of Publications Per Year**: The average number of papers published per year.
 
